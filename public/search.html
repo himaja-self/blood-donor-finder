@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find donors — Blood Donor Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-search" data-page="search">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Blood Donor Finder</a>
+        <nav class="nav">
+          <a href="register.html">Register</a>
+          <a href="search.html" aria-current="page">Find Donor</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <h1>Find a donor</h1>
+        <p class="muted">
+          Filter by blood group and/or city. Leave a field blank to ignore that
+          filter.
+        </p>
+
+        <form id="search-form" class="card form-card search-bar" novalidate>
+          <div class="search-fields">
+            <label>
+              Blood group
+              <select name="bloodGroup" id="filter-blood">
+                <option value="">Any</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+              </select>
+            </label>
+            <label>
+              City
+              <input
+                type="text"
+                name="city"
+                id="filter-city"
+                placeholder="e.g. Mumbai"
+                autocomplete="off"
+              />
+            </label>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+
+        <div id="search-status" class="search-status muted" aria-live="polite"></div>
+        <div id="results" class="results-grid" role="region" aria-label="Search results"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><a href="index.html">← Home</a></p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

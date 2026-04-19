@@ -1,0 +1,19 @@
+{
+  "name": "blood-donor-finder",
+  "version": "1.0.0",
+  "description": "Blood Donor Finder — full-stack demo with Express and MongoDB",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0"
+  }
+}

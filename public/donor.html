@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor details — Blood Donor Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-donor" data-page="donor">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Blood Donor Finder</a>
+        <nav class="nav">
+          <a href="register.html">Register</a>
+          <a href="search.html">Find Donor</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container narrow">
+        <p class="muted"><a href="search.html">← Back to search</a></p>
+        <h1 id="donor-page-title">Edit donor</h1>
+
+        <div id="load-error" class="alert alert-error hidden" role="alert"></div>
+
+        <form id="donor-form" class="card form-card hidden" novalidate>
+          <div id="form-alert" class="alert hidden" role="alert"></div>
+
+          <input type="hidden" name="id" id="donor-id" />
+
+          <label>
+            Full name <span class="req">*</span>
+            <input type="text" name="name" id="d-name" required />
+            <span class="field-error" id="d-err-name"></span>
+          </label>
+
+          <label>
+            Age <span class="req">*</span>
+            <input type="number" name="age" id="d-age" min="18" max="120" required />
+            <span class="field-error" id="d-err-age"></span>
+          </label>
+
+          <label>
+            Gender <span class="req">*</span>
+            <select name="gender" id="d-gender" required>
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="field-error" id="d-err-gender"></span>
+          </label>
+
+          <label>
+            Blood group <span class="req">*</span>
+            <select name="bloodGroup" id="d-bloodGroup" required>
+              <option value="">Select blood group</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+            <span class="field-error" id="d-err-bloodGroup"></span>
+          </label>
+
+          <label>
+            Phone number <span class="req">*</span>
+            <input type="tel" name="phone" id="d-phone" maxlength="10" required />
+            <span class="field-error" id="d-err-phone"></span>
+          </label>
+
+          <label>
+            City / location <span class="req">*</span>
+            <input type="text" name="city" id="d-city" required />
+            <span class="field-error" id="d-err-city"></span>
+          </label>
+
+          <label>
+            Last donation date <span class="optional">(optional)</span>
+            <input type="date" name="lastDonationDate" id="d-lastDonationDate" />
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" id="btn-delete" class="btn btn-danger">
+              Delete donor
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><a href="index.html">← Home</a></p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
